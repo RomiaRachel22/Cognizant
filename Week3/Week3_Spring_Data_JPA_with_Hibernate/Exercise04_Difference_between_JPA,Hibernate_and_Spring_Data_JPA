@@ -1,0 +1,31 @@
+Difference Between JPA, Hibernate, and Spring Data JPA:
+            When working with databases in Java, we often hear terms like JPA, Hibernate, and Spring Data JPA. Though they are related, each one serves a different purpose. 
+
+Here's what I understood from my learning:
+JPA (Java Persistence API):
+JPA is not a tool or framework. It is just a specification provided by Java to define how we can map Java objects to database tables. It basically sets the rules for ORM (Object Relational Mapping), like how to store, update, or fetch data using Java objects. But JPA itself doesn't provide any working code – it needs an implementation like Hibernate to work.
+
+HIBERNATE:
+Hibernate is a popular implementation of JPA. It is an actual tool that follows the JPA rules and lets us interact with databases. Hibernate handles most of the heavy lifting, like writing SQL queries behind the scenes, managing connections, and caching. Apart from supporting JPA, it also has its own extra features that are not part of JPA.
+
+SPRING DATA JPA:
+Spring Data JPA is built on top of JPA and Hibernate. It is not another JPA implementation, but rather a helper framework that makes working with JPA and Hibernate even easier. With Spring Data JPA, we don't have to write long DAO (Data Access Object) classes – we can simply create an interface that extends JpaRepository, and Spring will automatically generate the methods like save(), findAll(), etc. It also takes care of transaction management, so we can focus more on business logic.
+
+Using HIBERNATE:
+With Hibernate, we have to do a lot manually. For example, to add an employee, we must:
+1.Open a session
+2.Begin a transaction
+3.Save the entity
+4.Commit the transaction
+5.Handle exceptions
+6.Close the session
+Hibernate gives us full control, but it also means more boilerplate code for even basic tasks.
+
+Using SPRING DATA JPA:
+Spring Data JPA makes things much cleaner and simpler. We don’t need to worry about sessions or transactions explicitly. Instead:
+1.We define a repository interface.
+2.We autowire it where needed.
+3.We directly call methods like save().
+This approach reduces a lot of boilerplate code and improves readability. Spring takes care of the behind-the-scenes work like session management, transaction handling, and generating query methods.
+
+While Hibernate is powerful and flexible, Spring Data JPA offers a simpler, more modern way to interact with databases especially in Spring Boot applications. It helps developers focus more on logic and less on repetitive code.
