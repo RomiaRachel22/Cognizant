@@ -1,0 +1,15 @@
+.textRed {
+  color: red;
+  font-weight: bold;
+}
+
+.textGreen {
+  color: green;
+  font-weight: bold;
+}
+
+.App {
+  text-align: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
