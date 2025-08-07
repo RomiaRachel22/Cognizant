@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.container > div {
+  border-left: 3px solid green;
+  padding: 0 20px;
+}
